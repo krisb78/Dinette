@@ -17,7 +17,9 @@
     {{rtopic.filename}}<br/><br/>
     <a href="{{MEDIA_URL}}/{{rtopic.file}}">
         
-        <img src="{% thumbnail rtopic.file 200x200 %}" />
+        {% thumbnail rtopic.file "200x200" as im %}
+        <img src="{{ im.url }}" />
+        {% endthumbnail %}
         
     </a>   
     &nbsp; <a href=""> Download </a>
